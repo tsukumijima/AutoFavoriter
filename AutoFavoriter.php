@@ -7,7 +7,7 @@
 	// 設定読み込み
 	require_once (dirname(__FILE__).'/config.php');
 
-	echo "\n".'  ***** AutoFavoriter v1.0 *****'."\n\n";
+	echo "\n".'  ***** AutoFavoriter v1.1 *****'."\n\n";
 
 	try {
 	
@@ -73,8 +73,8 @@
 		echo '  '.$type.' '.sprintf('%02d', ($key + 1)).': Date: '.date('Y-m-d H:i:s', strtotime($value->created_at)).' ID: '.$value->id.
 			 ' Tweet: '.str_replace("\n", '', mb_substr($value->text, 0, 16)).'…'."\n";
 
-		// 高速で実行すると凍結しかねないのでランダムで1.5～4秒くらい間をおく
-		$sleep = rand(150, 400) * 10000;
+		// 高速で実行すると凍結しかねないのでランダムで1.5～5秒くらい間をおく
+		$sleep = rand(150, 500) * 10000;
 		usleep($sleep);
 
 	}
